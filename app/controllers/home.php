@@ -17,6 +17,11 @@ class Home  extends Controller
             $this->view('home/admin_page', ['items' => $users]);
         }
     }
+    public function aaa()
+    {
+        $this->view('home/hello');
+
+    }
 
 
 
