@@ -6,16 +6,8 @@ class Home  extends Controller
 
     public function index()
     {
-        if ($_SESSION['username'] == null) {
-            header('Location:/login/index/');
-            return;
-        }
-        if ($_SESSION['role'] == 'user') {
-            $this->view('home/index');
-        } else {
-            $users = $this->model('User')->get();
-            $this->view('home/admin_page', ['items' => $users]);
-        }
+        // header('Location:/login/index');
+        $this->view('home/index');
     }
     public function aaa()
     {

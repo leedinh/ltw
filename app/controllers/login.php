@@ -6,7 +6,7 @@ class Login extends Controller{
             
         }else
             if (isset($_POST['signin'])){
-                var_dump($_POST);
+                header('Location:/home/index');
             }
             else
         {

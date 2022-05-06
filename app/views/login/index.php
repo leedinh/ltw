@@ -1,14 +1,8 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<?php
+	include('../app/views/header.php');
+?>
 
-  <title>Login/Signup View</title>
-</head>
-<body>
+<title>Signup View aaaaa</title>
 <link rel="stylesheet" href="/css/mystyle.css">
 <div class="container" id="container">
 	<div class="form-container sign-up-container">
@@ -68,5 +62,6 @@
     container.classList.remove("right-panel-active");
   });
 </script>
-</body>
-</html>
+<?php
+	include('../app/views/footer.php');
+?>
