@@ -209,7 +209,7 @@
     
     
     <div class="news1 position-absolute bg-light slide1">
-    <object class="position-absolute" data="./assets/bg.svg"> 
+    <object class="position-absolute" data="/assets/bg.svg"> 
     </object>
       <div class="row g-0 position-relative full-height">
         <div class="col-md-6 p-4 ps-md-0 message-container">
@@ -219,12 +219,12 @@
         <div class="col-md-6 mb-md-0 p-md-4 full-height">
           <div class="img-descrip d-flex justify-content-center">
             <img
-              src="./assets/cloud.png"
+              src="/assets/cloud.png"
               class="position-absolute top-50 translate-middle-y"
               alt="..."
             />
             <img
-              src="./assets/business-3d-man-lying-with-laptop.png"
+              src="/assets/business-3d-man-lying-with-laptop.png"
               class="position-absolute top-50 translate-middle-y"
               alt="..."
             />
@@ -240,4 +240,5 @@
     ></script>
 <?php
 	include('../app/views/footer.php');
+
 ?>
