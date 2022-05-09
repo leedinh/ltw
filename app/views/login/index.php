@@ -2,8 +2,12 @@
 	include('../app/views/header.php');
 ?>
 
+
 <title>Signup View aaaaa</title>
 <link rel="stylesheet" href="/css/mystyle.css">
+<?php if (isset($data['error']))
+        echo '  <div class="alert alert-danger alert-dismissible">' . $data['error'] . '</div>'; 
+?>
 <div class="container" id="container">
     <div class="form-container sign-up-container">
         <form action="" method="POST">
