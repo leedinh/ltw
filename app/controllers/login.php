@@ -2,17 +2,43 @@
 class Login extends Controller{
     public function index(){
         if (isset($_POST['signup'])){
-            var_dump($_POST);
+            $newUser = $this->model('User');
+            $theUser = $newUser->findUser($_POST['username']);
+            if ($theUser == null ){
+            $newUser->username = $_POST['username'];
+            $newUser->password_hash = password_hash($_POST['password'], PASSWORD_DEFAULT);
+            $newUser->create();
+            $_SESSION['username'] = $theUser->username;
+            $_SESSION['user_id'] = $theUser->user_id;
+            $_SESSION['role'] = $theUser->role;
+            header('location:/home/index');
+            }
+            else
+            {
+                $this->view('login/index', ['error' => 'Username already exists']);
+            }
             
         }else
             if (isset($_POST['signin'])){
-                header('Location:/home/index');
-            }
+                
+                    $newUser = $this->model('User');
+                    $theUser = $newUser->findUser($_POST['username']);
+                    if ($theUser and password_verify($_POST['password'], $theUser->password_hash)){
+                        $_SESSION['username'] = $theUser->username;
+                        $_SESSION['user_id'] = $theUser->user_id;
+                        $_SESSION['role'] = $theUser->role;
+                        header('Location:/home/index');
+                    }
+                    else{
+                        $this->view('login/index',['error'=>'Login Failed']);
+                    }
+                }
             else
-        {
-
-            $this->view('login/index');
-        }
+                {
+                    $this->view('login/index');
+                }
+            
+        
     }
 
     public function register(){

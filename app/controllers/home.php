@@ -11,12 +11,25 @@ class Home  extends Controller
     }
     public function aaa()
     {
-        $this->view('home/hello');
+        $products =  $this->model('Product');
+        var_dump($products->get());
 
     }
 
+    public function bbb($pid)
+    {
+        $products =  $this->model('Product');
+        var_dump($products->find($pid));
 
+    }
 
+    public function ccc($category)
+    {
+        $products =  $this->model('Product');
+        var_dump($products->getCategory($category));
+
+    }
+    
 
 
 

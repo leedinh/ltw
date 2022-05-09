@@ -2,11 +2,12 @@
 
 class User extends Model {
     var $username;
+    var $password_hash;
 
     public function find($user_id){
-        $SQL = 'SELECT * FROM User WHERE user_id = '. $user_id;
+        $SQL = 'SELECT * FROM User WHERE user_id = :user_id';
         $stmt = self::$_connection->prepare($SQL);
-        $stmt->execute(); 
+        $stmt->execute(['user_id'=>$this->user_id]); 
         $stmt->setFetchMode(PDO::FETCH_CLASS, 'User');
         return $stmt->fetch();
     }
