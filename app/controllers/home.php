@@ -30,7 +30,13 @@ class Home  extends Controller
 
     }
     
+    public function products(){
+        $this->view('home/products/index');
+    }
 
+    public function item(){
+        $this->view('home/products/item');
+    }
 
 
     public function create()
