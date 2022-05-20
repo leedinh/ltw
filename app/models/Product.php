@@ -40,4 +40,12 @@ Class Product extends Model{
         return $stmt->fetchAll();
     }
 
+    public function printSummary() {
+        $SQL = 'SELECT manufacturer, model, category, price FROM product';
+        $stmt = self::$_connection->prepare($SQL);
+        $stmt->execute();
+        $stmt->setFetchMode(PDO::FETCH_CLASS, 'Product');
+        return $stmt->fetchAll();
+    }
+
 }

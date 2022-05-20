@@ -13,30 +13,33 @@ class Home  extends Controller
     {
         $products =  $this->model('Product');
         var_dump($products->get());
-
     }
 
     public function bbb($pid)
     {
         $products =  $this->model('Product');
         var_dump($products->find($pid));
-
     }
 
     public function ccc($category)
     {
         $products =  $this->model('Product');
         var_dump($products->getCategory($category));
-
-    }
-    
-    public function products(){
-        $this->view('home/products/index');
     }
 
-    public function item(){
+    public function products()
+    {
+        $products =  $this->model('Product');
+        $productslst = $products->get();
+        // var_dump($productslst);
+        $this->view('home/products/index',['product'=>$productslst]);
+    }
+
+    public function item($pid)
+    {
         $this->view('home/products/item');
     }
+
 
 
     public function create()
