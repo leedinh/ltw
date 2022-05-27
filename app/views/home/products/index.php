@@ -9,10 +9,10 @@
     <div class="row">
         <?php
           foreach($data['product'] as $item){
-            echo '<div class="col-md-3 col-sm-6 mt-3">
+            echo '<div class="col-md-4 col-sm-2 mt-3">
             <div class="product-grid4">
                 <div class="product-image4">
-                    <a href="#">
+                    <a href="/home/item/' . $item->pid .'">
                         <img class="pic-1" src="/assets/products/Image3.jpg">
                         <img class="pic-2" src="/assets/products/Image3_1.jpg">
                     </a>

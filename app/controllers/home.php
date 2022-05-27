@@ -9,35 +9,23 @@ class Home  extends Controller
         // header('Location:/login/index');
         $this->view('home/index');
     }
-    public function aaa()
-    {
-        $products =  $this->model('Product');
-        var_dump($products->get());
-    }
-
-    public function bbb($pid)
-    {
-        $products =  $this->model('Product');
-        var_dump($products->find($pid));
-    }
-
-    public function ccc($category)
-    {
-        $products =  $this->model('Product');
-        var_dump($products->getCategory($category));
-    }
 
     public function products()
     {
         $products =  $this->model('Product');
         $productslst = $products->get();
+        shuffle($productslst);
+        $productslst = array_slice($productslst,0,6);
         // var_dump($productslst);
         $this->view('home/products/index',['product'=>$productslst]);
     }
 
+
     public function item($pid)
-    {
-        $this->view('home/products/item');
+    {   
+        $product = $this->model('Product');
+        $product = $product->find($pid);
+        $this->view('home/products/item', ['item'=>$product]);
     }
 
 
