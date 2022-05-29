@@ -3,6 +3,7 @@
 <?php
   $path = '../app/views/';
 	include($path.'header.php');
+  include($path.'navbar.php');
 ?>
   <div class="container">
     <h3 class="h3">Products Grid</h3>
@@ -70,5 +71,5 @@
 </div>
 </div>
 <?php
-	include($path.'footer.php');
+	// include($path.'footer.php');
 ?>

@@ -25,6 +25,8 @@
 
 </footer>
 <style>
+
+
 footer {
     width: 100%;
     position: absolute;

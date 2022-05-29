@@ -107,7 +107,7 @@ section {
 
 </style>
     <section>
-        <div class="news row position-absolute top-50 start-50 translate-middle">
+        <div class="row position-absolute top-50 start-50 translate-middle">
                 <div class="col message-container">
                     <h1 class="message mt-0 display-1 p-4">Every choice is a journey</h1>
                     <p class="message lead p-4">Let us be your backpacker.</p>
@@ -129,6 +129,6 @@ section {
 
 
 <?php
-	include($path.'footer.php');
+	// include($path.'footer.php');
 
 ?>
