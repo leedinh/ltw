@@ -4,108 +4,131 @@
   include($path.'navbar.php');
 ?>
 <style>
-.message-container {
+@import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@300&display=swap');
+/* .message-container {
     position: relative;
     display: flex;
     flex-direction: column;
     justify-content: center;
+} */
+
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-.message-container .message {
-    transform: translateX(5%);
-}
-
-.slideRight {
-    transition: slideInFromLeft 3s ease-out;
-}
-
-@keyframes mySpinner {
-    from {
-        transform: rotate(0deg);
-    }
-
-    50% {
-        transform: rotate(180deg);
-    }
-
-    to {
-        transform: rotate(360deg);
-    }
-}
-
-@keyframes slideInFromLeft {
-    0% {
-        transform: translateX(-100%);
-    }
-
-    100% {
-        transform: translateX(0);
-    }
-}
-
-@keyframes slideInFromTop {
-    0% {
-        transform: translateX(5%);
-    }
-
-    50% {
-        transform: translateX(0%);
-    }
-
-    100% {
-        transform: translateX(5%);
-    }
-}
-
-.background-layer svg * {
-    transition: fill 1s ease;
-}
-
-.background-layer:hover #line1 {
-    fill: #404
-}
-
-.message {
-    transition: transform 1s ease-in;
-}
-
-.slide1 {
+section {
     width: 100vw;
     height: 100vh;
+    color: #fff;
+    background: linear-gradient(-45deg, #33a6cc, #80b3ff, #33cca6, #8585e0);
+    background-size: 400vw 400vh;
+    position: relative;
+    animation: change 10s ease-in-out infinite;
+}
+@keyframes change {
+    0% {
+        background-position: 0 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0 50%;
+    }
 }
 
-.img-descip {
-    height: auto;
+.news {
+    width: 75vw;
+    padding: 2rem;
+    background: rgba(255,255,255,0.3);
+    border-radius: 50px;
+}
+.news h1 {
+    font-family: 'Pacifico', cursive;
+}
+.news p {
+    font-family: 'Roboto Mono', monospace;
 }
 
-.full-height {
-    height: 100vh;
+.curve {
+    position: absolute;
+    height: 225px;
+    width: 100%;
+    bottom: 0;
 }
+
+.curve::before {
+    content: '';
+    display: block;
+    position: absolute;
+    border-radius: 100% 50%;
+    width: 55%;
+    height: 100%;
+    background-color: white;
+    transform: translate(85%, 60%);
+}
+.curve::after {
+    content: '';
+    display: block;
+    position: absolute;
+    border-radius: 100% 50%;
+    width: 55%;
+    height: 100%;
+    background-color: linear-gradient(-45deg, #33a6cc, #80b3ff, #33cca6, #8585e0);
+    animation: change 10s ease-in-out infinite;
+    transform: translate(-4%, 40%);
+    z-index: -1;
+}
+
+.custom-shape-divider-bottom-1653630899 {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    overflow: hidden;
+    line-height: 0;
+}
+
+.custom-shape-divider-bottom-1653630899 svg {
+    position: relative;
+    display: block;
+    width: calc(129% + 1.3px);
+    height: 138px;
+}
+
+.custom-shape-divider-bottom-1653630899 .shape-fill {
+    fill: #FFFFFF;
+}
+
 </style>
-
-
-
-
-<div class="news1 position-absolute bg-light slide1">
-    <object class="position-absolute" data="/assets/bg.svg">
-    </object>
-    <div class="row g-0 position-relative full-height">
-        <div class="col-md-6 p-4 ps-md-0 message-container">
-            <h1 class="message mt-0 display-1 p-4">EVERY CHOICE IS A JOURNEY</h1>
-            <p class="message lead p-4">Let us be your backpacker.</p>
-        </div>
-        <div class="col-md-6 mb-md-0 p-md-4 full-height">
-            <div class="img-descrip d-flex justify-content-center">
-                <img src="/assets/cloud.png" class="position-absolute top-50 translate-middle-y" alt="..." />
-                <img src="/assets/business-3d-man-lying-with-laptop.png"
-                    class="position-absolute top-50 translate-middle-y" alt="..." />
+    <section>
+        <div class="row position-absolute top-50 start-50 translate-middle">
+                <div class="col message-container">
+                    <h1 class="message mt-0 display-1 p-4">Every choice is a journey</h1>
+                    <p class="message lead p-4">Let us be your backpacker.</p>
+                </div>
+                <div class="col-6 img-laptop">
+                    <img src="/assets/laptop.png" alt="">
+                </div>
             </div>
         </div>
-    </div>
+        <div class="custom-shape-divider-bottom-1653630899">
+    <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
+        <path d="M985.66,92.83C906.67,72,823.78,31,743.84,14.19c-82.26-17.34-168.06-16.33-250.45.39-57.84,11.73-114,31.07-172,41.86A600.21,600.21,0,0,1,0,27.35V120H1200V95.8C1132.19,118.92,1055.71,111.31,985.66,92.83Z" class="shape-fill"></path>
+    </svg>
+    
 </div>
+    </section>
+
+
 
 
 <?php
-	include($path.'footer.php');
+	// include($path.'footer.php');
 
 ?>
