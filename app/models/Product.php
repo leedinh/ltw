@@ -33,7 +33,7 @@ Class Product extends Model{
     }
 
     public function getCategory($category)  {
-        $SQL = 'SELECT * FROM product WHERE category = :category';
+        $SQL = 'SELECT * FROM product WHERE manufacturer = :category';
         $stmt = self::$_connection->prepare($SQL);
         $stmt->execute(['category'=>$category]);
         $stmt->setFetchMode(PDO::FETCH_CLASS, 'Product');

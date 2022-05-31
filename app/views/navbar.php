@@ -88,7 +88,7 @@
 
 </style>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
-<nav class="position-absolute navbar navbar-expand-lg w-100 navbar-light bg-transparent" style="z-index: 1;">
+<nav class="position-relative navbar navbar-expand-lg w-100 navbar-light bg-transparent" >
     <div class="container-fluid">
         <a class="navbar-brand" href="#">LapPro</a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
@@ -102,17 +102,17 @@
                     <a class="nav-link active" aria-current="page" href="/home/index">Home</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="/home/products">Products</a>
+                    <a class="nav-link" href="/home/products/all">Products</a>
                 </li>
             </ul>
         </div>
 
-        <div class="search-container">
+        <!-- <div class="search-container">
             <form action="" class="search-bar">
                 <input type="text" placeholder="search for laptop..." name="q">
                 <button type="submit"><span class="material-symbols-outlined" id="search-symbol">search</span></button>
             </form>
-        </div>
+        </div> -->
 
         <div class="btn-container">
             <button class="btn" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"

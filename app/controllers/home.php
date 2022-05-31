@@ -10,14 +10,22 @@ class Home  extends Controller
         $this->view('home/index');
     }
 
-    public function products()
+    public function products($cate)
     {
         $products =  $this->model('Product');
-        $productslst = $products->get();
-        shuffle($productslst);
-        $productslst = array_slice($productslst,0,6);
+        if ($cate == 'all'){
+            $productslst = $products->get();
+            shuffle($productslst);
+            $productslst = array_slice($productslst,0,18);
         // var_dump($productslst);
-        $this->view('home/products/index',['product'=>$productslst]);
+            $this->view('home/products/index',['product'=>$productslst]);
+        }
+        else{
+            $productslst = $products->getCategory($cate);
+            shuffle($productslst);
+            $productslst = array_slice($productslst,0,18);
+            $this->view('home/products/index',['product'=>$productslst]);
+        }
     }
 
 

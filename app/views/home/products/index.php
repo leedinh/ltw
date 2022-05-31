@@ -50,46 +50,46 @@
               </div>
                 <div class="carousel-inner" role="listbox">
                   <div class="carousel-item active mx-auto">
-                    <button type="button" class="btn box-btn border border-outline-dark p-3 m-3">
+                    <a href="/home/products/Asus" type="button" class="btn box-btn border border-outline-dark p-3 m-3">
                       <img class="" src="/assets/logo/Asus.png" alt="">
-                    </button>
-                    <button type="button" class="btn box-btn border border-outline-dark p-3 m-3">
+                    </a>
+                    <a href="/home/products/Lenovo" type="button" class="btn box-btn border border-outline-dark p-3 m-3">
                       <img class="" src="/assets/logo/lenovo.png" alt="">
-                    </button>
-                    <button type="button" class="btn box-btn border border-outline-dark p-3 m-3">
+                    </buttoalt>
+                    <a href="/home/products/HP" type="button" class="btn box-btn border border-outline-dark p-3 m-3">
                       <img class="" src="/assets/logo/hp.png" alt="">
-                    </button>
-                    <button type="button" class="btn box-btn border border-outline-dark p-3 m-3">
+                    </a>
+                    <a href="/home/products/Dell" type="button" class="btn box-btn border border-outline-dark p-3 m-3">
                     <img class="" src="/assets/logo/dell.png" alt="">
-                  </button>
+                  </a>
                 </div>
                 <div class="carousel-item">
-                    <button type="button" class="btn box-btn border border-outline-dark p-3 m-3">
+                    <a href="/home/products/Google" type="button" class="btn box-btn border border-outline-dark p-3 m-3">
                       <img class="" src="/assets/logo/Google.png" alt="">
-                    </button>
-                    <button type="button" class="btn box-btn border border-outline-dark p-3 m-3">
+                    </a>
+                    <a href="/home/products/Acer" type="button" class="btn box-btn border border-outline-dark p-3 m-3">
                       <img class="" src="/assets/logo/acer.png" alt="">
-                    </button>
-                    <button type="button" class="btn box-btn border border-outline-dark p-3 m-3">
+                    </a>
+                    <a href="/home/products/LG" type="button" class="btn box-btn border border-outline-dark p-3 m-3">
                       <img class="" src="/assets/logo/lg.svg" alt="">
-                    </button>
-                    <button type="button" class="btn box-btn border border-outline-dark p-3 m-3">
+                    </a>
+                    <a href="/home/products/Samsung" type="button" class="btn box-btn border border-outline-dark p-3 m-3">
                     <img class="" src="/assets/logo/samsung.png" alt="">
-                  </button>
+                  </a>
                 </div>
                 <div class="carousel-item">
-                    <button type="button" class="btn box-btn border border-outline-dark p-3 m-3">
+                    <a href="/home/products/Huawei" type="button" class="btn box-btn border border-outline-dark p-3 m-3">
                       <img class="" src="/assets/logo/huawei.png" alt="">
-                    </button>
-                    <button type="button" class="btn box-btn border border-outline-dark p-3 m-3">
+                    </a>
+                    <a href="/home/products/Microsoft" type="button" class="btn box-btn border border-outline-dark p-3 m-3">
                       <img class="" src="/assets/logo/microsoft.png" alt="">
-                    </button>
-                    <button type="button" class="btn box-btn border border-outline-dark p-3 m-3">
+                    </a>
+                    <a href="/home/products/MSI" type="button" class="btn box-btn border border-outline-dark p-3 m-3">
                       <img class="" src="/assets/logo/msi.png" alt="">
-                    </button>
-                    <button type="button" class="btn box-btn border border-outline-dark p-3 m-3">
+                    </a>
+                    <a href="/home/products/Razer" type="button" class="btn box-btn border border-outline-dark p-3 m-3">
                     <img class="" src="/assets/logo/razer.svg" alt="">
-                  </button>
+                  </a>
                   </div>
                   <!-- <div class="carousel-item ">
                   </div> -->
@@ -181,5 +181,5 @@
     integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous">
 </script>
 <?php
-	// include($path.'footer.php');
+	include($path.'footer.php');
 ?>

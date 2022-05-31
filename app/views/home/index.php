@@ -129,6 +129,6 @@ section {
 
 
 <?php
-	// include($path.'footer.php');
+	include($path.'footer.php');
 
 ?>
