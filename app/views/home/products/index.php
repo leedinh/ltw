@@ -34,6 +34,17 @@
     background: rgba(255, 255, 255, 0.3);
     border-radius: 25px;
   }
+  .carousel-item {
+    animation: slideUp 1.5s ease;
+  }
+  @keyframes slideUp{
+    0% {
+      transform: translateY(500px);
+    }
+    100% {
+      transform: translateY(0);
+    }
+  }
 </style>
   <div class="position-relative container w-75">
     <!-- <img alt="LENOVO LEGION 5: Best Choice tầm giá 27 triệu!" src="https://media-api-beta.thinkpro.vn/media/core/banners/2022/5/12/Bản sao legion 5 866-374.jpg" class="blur-up h-full w-full object-cover t-img"> -->
@@ -101,17 +112,20 @@
                     </svg>
                   </button>
                 </div>
+              </div>
             </div>
           </div>
-        </div>
-        <div class="col-8 p-3 bg-opacity">
-          <div class="search-bar">
-            <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="Search...">
-          </div>
-          <div class="row p-3">
+          <div class="col-8 p-3 bg-opacity">
+            <form method="POST" id="search-bar" class="search-bar">
+              <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="Search...">
+            </form>
+          <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+          <div class="row p-3" id="wrap">
+            
               <?php
                 foreach($data['product'] as $item){
-                  echo '<div class="col-md-4 col-sm-2 mt-3" style="height: 35vh;">
+                  echo '
+                  <div class="col-md-4 col-sm-2 mt-3 item" style="height: 35vh;">
                   <div class="product-grid4 h-100">
                       <div class="product-image4">
                           <a href="/home/item/' . $item->pid .'">
@@ -133,28 +147,42 @@
                           <div class="container table-btn" >
                             <div class="row" >
                               <div class="col">
-                                  <btn type="button" class="btn btn-outline-dark w-100 h-100">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-cart-plus" viewBox="0 0 16 16">
-                                        <path d="M9 5.5a.5.5 0 0 0-1 0V7H6.5a.5.5 0 0 0 0 1H8v1.5a.5.5 0 0 0 1 0V8h1.5a.5.5 0 0 0 0-1H9V5.5z" />
-                                        <path d="M.5 1a.5.5 0 0 0 0 1h1.11l.401 1.607 1.498 7.985A.5.5 0 0 0 4 12h1a2 2 0 1 0 0 4 2 2 0 0 0 0-4h7a2 2 0 1 0 0 4 2 2 0 0 0 0-4h1a.5.5 0 0 0 .491-.408l1.5-8A.5.5 0 0 0 14.5 3H2.89l-.405-1.621A.5.5 0 0 0 2 1H.5zm3.915 10L3.102 4h10.796l-1.313 7h-8.17zM6 14a1 1 0 1 1-2 0 1 1 0 0 1 2 0zm7 0a1 1 0 1 1-2 0 1 1 0 0 1 2 0z" />
-                                    </svg>
-                                  </btn>
-
+                              <btn type="button" class="btn btn-outline-dark w-100 h-100">
+                              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-cart-plus" viewBox="0 0 16 16">
+                              <path d="M9 5.5a.5.5 0 0 0-1 0V7H6.5a.5.5 0 0 0 0 1H8v1.5a.5.5 0 0 0 1 0V8h1.5a.5.5 0 0 0 0-1H9V5.5z" />
+                              <path d="M.5 1a.5.5 0 0 0 0 1h1.11l.401 1.607 1.498 7.985A.5.5 0 0 0 4 12h1a2 2 0 1 0 0 4 2 2 0 0 0 0-4h7a2 2 0 1 0 0 4 2 2 0 0 0 0-4h1a.5.5 0 0 0 .491-.408l1.5-8A.5.5 0 0 0 14.5 3H2.89l-.405-1.621A.5.5 0 0 0 2 1H.5zm3.915 10L3.102 4h10.796l-1.313 7h-8.17zM6 14a1 1 0 1 1-2 0 1 1 0 0 1 2 0zm7 0a1 1 0 1 1-2 0 1 1 0 0 1 2 0z" />
+                              </svg>
+                              </btn>
+                              
                               </div>
                               <div class="col">
-                                  <btn type="button" class="btn btn-outline-dark w-100 h-100">Details</btn>
+                              <btn type="button" class="btn btn-outline-dark w-100 h-100">Details</btn>
                                 </div>
-                              </div>
-
+                                </div>
+                                
                            </div> 
-              
+                           
                       </div>
                   </div>
+                  
               </div>';
                   
                 }
               ?>
           </div>
+          <div aria-label="Page navigation">
+              <ul class="pagination justify-content-center mt-3">
+                  <button class="btn prev"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-caret-left-fill" viewBox="0 0 16 16">
+  <path d="m3.86 8.753 5.482 4.796c.646.566 1.658.106 1.658-.753V3.204a1 1 0 0 0-1.659-.753l-5.48 4.796a1 1 0 0 0 0 1.506z"/>
+</svg></button>
+                <input type="text" style="width:2em;" id="page" value="1">
+                  <button class="btn next"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-caret-right-fill" viewBox="0 0 16 16">
+  <path d="m12.14 8.753-5.482 4.796c-.646.566-1.658.106-1.658-.753V3.204a1 1 0 0 1 1.659-.753l5.48 4.796a1 1 0 0 1 0 1.506z"/>
+</svg></button>
+              </ul>
+              <div id="num-of-page">
+              </div>
+            </div>
         </div>
     </div>
 </div>
@@ -179,6 +207,84 @@
 </div>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous">
+</script>
+<script type="text/javascript">
+  var $el = $("#wrap > .item");
+  var $curr = document.getElementById("page").value;
+  var pageSize = 18;
+  var numPage = Math.ceil($el.length/pageSize);
+  document.getElementById("num-of-page").innerHTML = numPage;
+  $el.slice(0, pageSize).css({display: 'block'});
+  $el.slice(pageSize, $el.length).css({display: 'none'});
+
+  function addSlice(num){
+    return num + pageSize;
+  }
+
+  function subtractSlice(num){
+    return num - pageSize;
+  }
+
+  var slice = [0, pageSize];
+    
+    $('.next').click(function(){
+    if (slice[1] < $el.length ){ 
+      slice = slice.map(addSlice);   
+      console.log(slice);
+      $curr++;
+      document.getElementById("page").value = $curr;
+    }
+    showSlice(slice);
+  });
+
+
+  $('.prev').click(function(){
+    console.log($curr);
+    if (slice[0] > 0 ){ 
+      slice = slice.map(subtractSlice); 
+      $curr--;
+      document.getElementById("page").value = $curr;
+    }
+    showSlice(slice);
+  });
+
+  $('#page').bind("enterKey", function(e){
+    console.log($curr);
+    if ($(this).val() < 0 || $(this).val() == null){
+      $curr = 1
+      document.getElementById("page").value = $curr;
+    }
+    if ($(this).val() <= numPage && $(this).val() > 0){ 
+      $curr = $(this).val();
+      slice[0] = ($curr - 1)*pageSize;
+      slice[1] = slice[0] + pageSize; 
+    }
+    showSlice(slice);
+  })
+  $('#page').keyup(function(e){
+    if (e.keyCode == 13){
+      $(this).trigger("enterKey");
+    }
+  })
+  $('#page').on("focusout",function(){
+    console.log($curr);
+    if ($(this).val() < 0 || $(this).val() == null){
+      $curr = 1
+      document.getElementById("page").value = $curr;
+    }
+    if ($(this).val() <= numPage && $(this).val() > 0){ 
+      $curr = $(this).val();
+      slice[0] = ($curr - 1)*pageSize;
+      slice[1] = slice[0] + pageSize; 
+    }
+    showSlice(slice);
+  });
+  function showSlice(slice){
+    console.log($curr);
+    $el.css('display', 'none');
+    $el.slice(slice[0], slice[1]).css('display','block');
+    document.getElementById("num-of-page").innerHTML = numPage;
+  }
 </script>
 <?php
 	include($path.'footer.php');
