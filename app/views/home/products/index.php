@@ -42,7 +42,10 @@
     position: relative;
     justify-content: center;
   }
-  
+  .title a{
+    text-decoration: none;
+    font-weight: 600;
+  }
   @keyframes slideUp{
     0% {
       transform: translateY(500px);
@@ -136,7 +139,7 @@
                         </div>
                         <div class="product-content container">
                             <h3 class="title" >
-                            <a href="#">
+                            <a >
                                 '.$item->manufacturer.' '.$item->model.'
                             </a>
                             </h3>

@@ -24,11 +24,16 @@
         <div class="col">
             <h3>Newsletter <div class="underline"><span></span></div></h3>
             <form class="mail-form">
-            <span class="material-symbols-outlined">mail</span>
+            <span class="material-symbols-outlined" id="mail">mail</span>
                 <input type="email" placeholder="Enter your email" required>
-                <button type="submit"><span class="material-symbols-outlined">arrow_forward</span></button>
+                <button type="submit"><span class="material-symbols-outlined" id="arrow">arrow_forward</span></button>
             </form>
-            <i class="fa fa-envelope"></i>
+            <div class="social-icon">
+                <i class="fa fa-facebook-f" style="background: #3b5998;"></i>
+                <i class="fa fa-twitter" style="background: #00aced;"></i>
+                <i class="fa fa-whatsapp" style="background: #34bf49;"></i>
+                <i class="fa fa-pinterest" style="background: #cb2027;"></i>
+            </div>
         </div>
 
     </div>
@@ -47,8 +52,8 @@ body{
     border-bottom: 1px solid #ccc;
     margin-bottom: 50px;
 }
-.mail-form .material-symbols-outlined{
-    font-size: 20px;
+.material-symbols-outlined{
+    font-size: 25px;
     margin-right: 10px;
 }
 .mail-form input{
@@ -93,6 +98,20 @@ body{
         left: 100%;
     }
 }
+.social-icon .fa{
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 40px;
+    font-size: 20px;
+    color: #fff;
+    background: #000;
+    margin-right: 15px;
+    cursor: pointer;
+
+}
+
 
 footer {
     position: sticky;
