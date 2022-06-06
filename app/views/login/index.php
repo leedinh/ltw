@@ -53,6 +53,7 @@
         </div>
     </div>
 </div>
+<button onclick="history.back()"> <i class="fa fa-arrow-left"></i> </button>
 <script>
 const signUpButton = document.getElementById('signUp');
 const signInButton = document.getElementById('signIn');

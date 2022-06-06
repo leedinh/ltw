@@ -8,6 +8,7 @@ class Login extends Controller{
             $newUser->username = $_POST['username'];
             $newUser->password_hash = password_hash($_POST['password'], PASSWORD_DEFAULT);
             $newUser->create();
+            $theUser = $newUser->findUser($_POST['username']);
             $_SESSION['username'] = $theUser->username;
             $_SESSION['user_id'] = $theUser->user_id;
             $_SESSION['role'] = $theUser->role;
@@ -43,7 +44,7 @@ class Login extends Controller{
 
     public function logout(){
         session_destroy();
-        header('location:/login/index');
+        header('location:/home/index');
     }
 }
 ?>
