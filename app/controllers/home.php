@@ -37,6 +37,15 @@ class Home  extends Controller
     }
 
 
+    public function admin()
+    {
+        $products =  $this->model('Product');
+        $productslst = $products->get();
+        $this->view('home/add',['product'=>$productslst]);
+    }
+
+
+
 
     public function create()
     {
