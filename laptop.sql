@@ -32,7 +32,7 @@ use `laptop`;
 CREATE TABLE IF NOT EXISTS `user` (
   `user_id` int(11) NOT NULL,
   `username` varchar(20) NOT NULL,
-  `password_hash` varchar(20) NOT NULL
+  `password_hash` varchar(100) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
