@@ -126,9 +126,9 @@
         </a>
         <?php
         if (isset($_SESSION['user_id'])) {
-            echo '<a > Logout</a>';
+            echo '<a href="/login/logout"> Logout</a>';
         } else {
-            echo '<a > Login</a>';
+            echo '<a href="/login/index"> Login</a>';
         }
         ?>
         <?php

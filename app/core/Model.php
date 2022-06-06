@@ -13,10 +13,8 @@ class Model{
                 self::$_connection =new PDO("mysql:host=$host;dbname=$dbname",$user,$password);
 
                 if (self::$_connection) {
-                    echo "Connected to the $dbname database successfully!";
                 }
             } catch (PDOException $e) {
-                echo $e->getMessage();
             }
             
         }

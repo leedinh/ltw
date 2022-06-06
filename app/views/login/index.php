@@ -67,5 +67,5 @@ signInButton.addEventListener('click', () => {
 });
 </script>
 <?php
-	include('../app/views/footer.php');
+	// include('../app/views/footer.php');
 ?>

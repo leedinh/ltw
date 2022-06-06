@@ -29,6 +29,38 @@ class Home  extends Controller
     }
 
 
+    public function debug()
+    {
+        phpinfo();   
+    }
+
+    public function cartclick($pid)
+    {
+        $product = $this->model('Product');
+        $product = $product->find($pid);
+        $quantity =1;
+        if ($product && $quantity > 0) {
+            // Product exists in database, now we can create/update the session variable for the cart
+            if (isset($_SESSION['cart']) && is_array($_SESSION['cart'])) {
+                if (array_key_exists($pid, $_SESSION['cart'])) {
+                    // Product exists in cart so just update the quanity
+                    $_SESSION['cart'][$pid] += $quantity;
+                } else {
+                    // Product is not in cart so add it
+                    $_SESSION['cart'][$pid] = $quantity;
+                }
+            } else {
+                // There are no products in cart, this will add the first product to cart
+                $_SESSION['cart'] = array($pid => $quantity);
+            }
+            echo array_sum($_SESSION['cart']);
+        }
+        else{
+            echo 0;
+        }
+
+    }
+
     public function item($pid)
     {   
         $product = $this->model('Product');

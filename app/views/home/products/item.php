@@ -57,8 +57,8 @@
         </div>
         <div class="col-md-6 p-4 ps-md-0">
             <div class="infor ps-4">
-                <h1 class="mt-0"><?php echo $data['item']->manufacturer ?></h1>
-                <h2 class="mt-0"><?php echo $data['item']->price ?></h2>
+                <h1 class="mt-0"><?php echo $data['item']->manufacturer.' '. $data['item']->model ?></h1>
+                <h2 class="mt-0">&euro; <?php echo $data['item']->price ?></h2>
                 <p>Cau hinh</p>
                 <div class="container">
                     <div class="row">
