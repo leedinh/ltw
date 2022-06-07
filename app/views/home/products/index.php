@@ -128,9 +128,18 @@ include($path . 'navbar.php');
     </div>
     <div class="col-10 px-3 bg-opacity">
       <div class="show-product px-4">
-        <form method="POST" id="search-bar" class="search-bar">
-          <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="Search...">
-        </form>
+      <form class="show-product px-4 d-flex flex-column w-50">
+              <div id="search-bar" class="search-bar d-flex flex-row">
+                <input type="text" class="form-control border border-dark m-3" id="search-input" placeholder="Search...">
+                <button class="button" class="btn" id="search-btn">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
+                    <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/>
+                  </svg>
+                </button>
+              </div>
+              <div class="result position-relative" name="result" id="result"></div>
+            </form>
+            <div class="row" id="wrap">
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
         <div class="row" id="wrap">
 
@@ -363,24 +372,29 @@ include($path . 'navbar.php');
     $brand.slice(piece[0], piece[1]).removeClass('d-none');
   }
 
-
-  // const fixmeBottom = $("#fixme").offset();       // get last position of the element
-  // console.log("Position of fix me");
-  // $(window).scroll(function() {                  // assign scroll event listener
-  //     var $currentScroll = $('.product-carousel').offset; // get current position
-  //     console.log($currentScroll.bottom);
-  //     if ($currentScroll.bottom <= fixmeBottom.bottom) {           // apply position: fixed if you
-  //         $('.product-carousel').css({                      // scroll to that element or below it
-  //             position: 'fixed',
-  //         });
-  //     } else {                                   // apply position: static
-  //         $('.product-carousel').css({                      // if you scroll above it
-  //             position: 'static',
-
-  //         });
-  //     }
-
-  // });
+  $(document).ready(function(){
+  $('#search-input').keyup(function(){
+    fetch();
+  });
+});
+function fetch() {
+  var val = $("#search-input").val();
+  console.log(val);
+  if (val != ""){
+  $.ajax({
+    type:"post",    //submit method
+    url: '/home/search/'+val,
+    type: 'post',
+    //action on successful post request
+    success: function(response)
+    {
+      $('.result').html(response);
+    },
+  })}
+  else{
+    $('.result').html("");
+  }
+}
 </script>
 <?php
 include($path . 'footer.php');
