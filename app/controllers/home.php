@@ -28,6 +28,26 @@ class Home  extends Controller
         }
     }
 
+    public function search($input){
+        $products =  $this->model('Product');
+        $productslst = $products->search($input);
+        $productslst = array_slice($productslst,0,4);
+        // var_dump( $productslst);
+        foreach ($productslst as $item){
+            echo '
+            <div class="position-relative border">
+                <a href="/home/item/'.$item->pid.'" class="dropdown-item text-wrap d-flex ">
+                <img class="w-25 flex-shrink-0 me-3" src="/assets/products/Image3.jpg">
+                <div>
+                    <div class="name d-flex align-items-center">
+                        '.$item->fullname.'
+                        </div>
+                        </div>
+                </a>
+            </div>'; 
+        }
+    }
+
 
     public function debug()
     {
