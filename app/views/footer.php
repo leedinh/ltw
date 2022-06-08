@@ -1,5 +1,4 @@
 <footer>
-    <hr>
     <script src="https://kit.fontawesome.com/yourcode.js" crossorigin="anonymous"></script>
     <div class="container-fluid">
         <div class="row justify-content-center">
@@ -136,7 +135,6 @@
         /* border-top-left-radius: 125px; */
         font-size: 13px;
         line-height: 10px;
-        font-weight: bold;
     }
 
     footer .map {
@@ -158,7 +156,8 @@
 
     footer .col {
         flex-basis: 25%;
-
+        margin: 2rem;
+        line-height: 1.5;
     }
 
     footer i {
@@ -168,6 +167,7 @@
 
     footer .row p {
         font-size: 1rem;
+        font-weight: 200px;
     }
     footer .clickmap{
         cursor: pointer;

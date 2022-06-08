@@ -184,7 +184,7 @@ include($path . 'navbar.php');
       <form class="show-product px-4 d-flex flex-column w-50">
         <div id="search-bar" class="search-bar d-flex flex-row">
           <input type="text" class="form-control border border-dark m-3" id="search-input" placeholder="Search...">
-          <button class="button" class="btn" id="search-btn">
+          <button type="button" class="btn" id="search-btn">
             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
               <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z" />
             </svg>
@@ -261,6 +261,7 @@ include($path . 'navbar.php');
     </div>
   </div>
 </div>
+<hr>
 <div class="position-fixed bottom-0 end-0 m-3">
   <button id="cart-show" type="button" class="btn btn-outline-dark rounded-pill p-3" data-bs-toggle="offcanvas" data-bs-target="#cart" aria-controls="cart">
     <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-cart" viewBox="0 0 16 16">
@@ -273,16 +274,32 @@ include($path . 'navbar.php');
       else
         echo 0;
       ?>
-      <span class="visually-hidden">unread messages</span>
     </span>
   </button>
   <div class="offcanvas offcanvas-end" tabindex="-1" id="cart" aria-labelledby="cartLabel">
-    <div class="offcanvas-header">
-      <h5 class="offcanvas-title" id="cartLabel">Cart</h5>
+    <div class="offcanvas-header" >
+      <h5 class="offcanvas-title align-middle" id="cartLabel">
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-bag-heart-fill mx-3" viewBox="0 0 16 16">
+  <path d="M11.5 4v-.5a3.5 3.5 0 1 0-7 0V4H1v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V4h-3.5ZM8 1a2.5 2.5 0 0 1 2.5 2.5V4h-5v-.5A2.5 2.5 0 0 1 8 1Zm0 6.993c1.664-1.711 5.825 1.283 0 5.132-5.825-3.85-1.664-6.843 0-5.132Z"/>
+</svg>Cart</h5>
       <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
     </div>
     <div class="offcanvas-body">
       
+    </div>
+    <div class="offcanvas-footer d-flex flex-column" style="z-index: 1">
+      <div class="total-price d-flex p-3" style="border-top: solid 1px black ; ">
+        <div class="me-auto p-2">SUB-TOTAL</div>
+        <div class="p-2">Price</div>
+      </div>
+      <div class="cart-btn d-flex justify-content-evenly p-3">
+        <button type="button" class="btn btn-outline-dark p-3 clear-btn" style="width: 35%">
+            Clear
+        </button>
+        <button type="button" class="btn btn-dark p-3 checkout-btn" style="width: 35%; background-color: black;">
+          Checkout
+        </button>
+      </div>
     </div>
   </div>
 </div>
@@ -456,15 +473,6 @@ include($path . 'navbar.php');
       $('.result').html("");
     }
   }
-  // $('#search-btn').click(function(){
-  //   // alert('Bam r');
-  //   var val = $("#search-input").val();
-  //   // alert(val); 
-  //   if (val != ""){
-  //     window.location.replace('home/searchName/apple');
-  //     // alert(window.location.href);
-  //   }
-  // })
 </script>
 <?php
 include($path . 'footer.php');

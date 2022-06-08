@@ -61,21 +61,24 @@ class Home  extends Controller
             foreach ($_SESSION['cart'] as $key => $value){
                 $item = $products->find($key);
                 echo '
-                <div class="position-relative border">
-                    <a href="/home/item/'.$item->pid.'" class="dropdown-item text-wrap d-flex ">
-                    <img class="w-25 flex-shrink-0 me-3" src="/assets/products/Image3.jpg">
-                    <div>
-                        <div class="name d-flex">
-                            '.$item->fullname.'
-                            </div>
-                        <div class="price d-flex">
-                            Price: '.$item->price.'
-                            </div>
-                        <div class="quantity d-flex">
-                            Quantity: '.$value.'
-                            </div>
-                    </a>
-                </div>'; 
+                <div class="row">
+                    <div class="col-4 col-xs-2">
+                        <a href="/home/item/'.$item->pid.'" class="stretched-link w-50 ">
+                        <img src="/assets/products/Image3.jpg" class="flex-shrink-0 me-3 img-cart">
+                        </a>
+                    </div>
+                    <div class="col-8 col-xs-2">
+                        <a href="/home/item/'.$item->pid.'" style="text-decoration: none;">
+                            <p class="mt-0" style="color: black; font-weight: 700;">'.$item->fullname.'</p>
+                            <p class="price" style="color: #8585e0;">
+                                Price: '.$item->price.'
+                            </p>
+                            <p class="quantity" style="color: black;">
+                                Quantity: '.$value.'
+                            </p>
+                        </a>
+                    </div>
+                </div>';
             }
         }
     }
@@ -105,6 +108,10 @@ class Home  extends Controller
             echo 0;
         }
 
+    }
+
+    public function cart(){
+            $this->view('home/cart/detail');
     }
 
     public function item($pid)

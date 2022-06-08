@@ -6,12 +6,6 @@
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@300&display=swap');
-/* .message-container {
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-} */
 
 
 *{
@@ -108,9 +102,10 @@ section {
 </style>
     <section>
         <div class="row position-absolute top-50 start-50 translate-middle">
-                <div class="col message-container">
+                <div class="col-6 message-container">
                     <h1 class="message mt-0 display-1 p-4">Every choice is a journey</h1>
                     <p class="message lead p-4">Let us be your backpacker.</p>
+                    <a href="/home/products/all"></a>
                 </div>
                 <div class="col-6 img-laptop">
                     <img src="/assets/laptop.png" alt="">
