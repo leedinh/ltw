@@ -61,4 +61,10 @@ class Product extends Model
         $stmt->setFetchMode(PDO::FETCH_CLASS, 'Product');
         return $stmt->fetchAll();
     }
+    public function delete(){
+        $SQL = 'DELETE FROM product WHERE pid = :pid';
+        $stmt = self::$_connection->prepare($SQL);
+        $stmt->execute(['pid'=>$this->pid]);
+        return $stmt->rowCount();
+    }
 }

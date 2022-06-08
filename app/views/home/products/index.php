@@ -42,6 +42,16 @@ include($path . 'navbar.php');
     justify-content: center;
   }
 
+  a {
+  text-decoration: none !important;
+  color: Black;
+  }
+a:hover {
+  color: gray;
+  border-bottom: 0.5px solid #333;
+  cursor: pointer;
+}
+
   .price {
     color: #808080;
   }
@@ -94,11 +104,17 @@ include($path . 'navbar.php');
     font-size: 30px;
     font-weight: 300px;
   }
+  .offcanvas{
+    width: 550px;
+  }
+
+  .d-flex{
+    margin-right: 10px;
+  }
 
   .title {
     height: 30%;
     padding-top: 1.5em;
-    margin-bottom: 1.5em;
   }
 
   .product-grid4 {
@@ -252,7 +268,7 @@ include($path . 'navbar.php');
           </button>
         </ul>
         <div class="container d-flex justify-content-center">
-          <p>Total:&nbsp; </p>
+          <p>Total pages:&nbsp; </p>
           <p id="num-of-page">
           </p>
         </div>

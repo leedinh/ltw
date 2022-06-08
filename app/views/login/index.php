@@ -3,7 +3,6 @@
 ?>
 
 
-<title>Signup View aaaaa</title>
 <link rel="stylesheet" href="/css/mystyle.css">
 <?php if (isset($data['error']))
         echo '  <div class="alert alert-danger alert-dismissible">' . $data['error'] . '</div>'; 
@@ -53,9 +52,20 @@
         </div>
     </div>
 </div>
-<div class="" style="margin-top: 3rem;">
-    <button onclick="history.back()"> <i class="fa fa-arrow-left"></i> </button>
-</div>
+<button id ="back" onclick="history.back()"> <i class="fa fa-arrow-left"></i> </button>
+<style> 
+#back{
+    background-color: gray;
+    border: none;
+    font-size: 15px;
+     margin-top: 10px;
+     margin-left:20px;
+     position: absolute;
+     top:0;
+     left: 0;
+}
+</style>
+
 <script>
 const signUpButton = document.getElementById('signUp');
 const signInButton = document.getElementById('signIn');
