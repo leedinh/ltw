@@ -3,7 +3,6 @@
 ?>
 
 
-<title>Signup View aaaaa</title>
 <link rel="stylesheet" href="/css/mystyle.css">
 <?php if (isset($data['error']))
         echo '  <div class="alert alert-danger alert-dismissible">' . $data['error'] . '</div>'; 
