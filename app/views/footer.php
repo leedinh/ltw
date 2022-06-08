@@ -136,7 +136,7 @@
         /* border-top-left-radius: 125px; */
         font-size: 13px;
         line-height: 10px;
-        font-weight: bold;
+        font-weight: 450;
     }
 
     footer .map {

@@ -5,6 +5,15 @@
         margin-right: 0rem;
     }
 
+    a {
+  text-decoration: none !important;
+  color: Black;
+  }
+a:hover {
+  color: gray;
+  border-bottom: 0.5px solid #333;
+  cursor: pointer;
+}
     .container-fluid {
         padding: 1rem 2rem;
         margin-left: 2rem;
@@ -104,7 +113,7 @@
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
 <nav class="position-relative navbar navbar-expand-lg w-100 navbar-light bg-transparent">
     <div class="container-fluid">
-        <a class="navbar-brand" href="#">LapPro</a>
+        <a class="navbar-brand" >LapPro</a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
             Categories
@@ -120,7 +129,7 @@
             </ul>
         </div>
 
-        <a class="btn" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <a href='/home/cartView/' class="btn" type="button" >
             <span class="material-symbols-outlined">shopping_cart</span>
         </a>
         <?php

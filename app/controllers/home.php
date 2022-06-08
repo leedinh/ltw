@@ -49,35 +49,48 @@ class Home  extends Controller
     }
 
 
-    public function debug()
+    public function cartView()
     {
-        phpinfo();   
+        $this->view('home/cart');
     }
 
     public function cartshow()
     {
         $products = $this->model('Product');
         if (isset($_SESSION['cart'])){
+            $output = '';
+            $total = 0;
             foreach ($_SESSION['cart'] as $key => $value){
                 $item = $products->find($key);
-                echo '
-                <div class="position-relative border">
-                    <a href="/home/item/'.$item->pid.'" class="dropdown-item text-wrap d-flex ">
+                $total += (float)$item->price * $value;
+                $output .= '
+                <div class="position-relative border tcan">
+                    <div class="dropdown-item text-wrap d-flex ">
                     <img class="w-25 flex-shrink-0 me-3" src="/assets/products/Image3.jpg">
-                    <div>
-                        <div class="name d-flex">
+                        
+                    <a href ="/home/item/'.$item->pid.'"'.'class="d-flex align-self-center">
                             '.$item->fullname.'
-                            </div>
-                        <div class="price d-flex">
-                            Price: '.$item->price.'
-                            </div>
-                        <div class="quantity d-flex">
-                            Quantity: '.$value.'
-                            </div>
-                    </a>
+                        </a>
+                        <div class="d-flex align-self-center">
+                            &euro;'.$item->price.'
+                            x'.$value.'
+                        </div>
+                        <a href="/home/deleteCart/'.$item->pid.'"'.'class=" d-flex align-self-center">
+                            <i class="fa fa-trash-o" ></i>
+                        </a>
+                        </div>
                 </div>'; 
             }
+            $output.='
+            <p> Total Price: &euro;'.$total.'</p>';
+            echo $output;
         }
+    }
+
+    public function deleteCart($pid){
+        unset($_SESSION['cart'][$pid]);
+        header("Location: " . $_SERVER["HTTP_REFERER"]);
+
     }
 
     public function cartclick($pid)
@@ -117,6 +130,12 @@ class Home  extends Controller
 
     public function admin()
     {
+        if ($_SESSION['username'] == null || $_SESSION['role'] == 'user') {
+            header('Location:/login/index');
+            echo '<scrip>alert("You are not allowed to access this page");</scrip>';
+            return;
+
+        }
         $products =  $this->model('Product');
         $productslst = $products->get();
         $this->view('home/add',['product'=>$productslst]);
@@ -208,15 +227,16 @@ class Home  extends Controller
         }
     }
 
-    public function delete($user_id)
+    public function deleteProduct($pid)
     {
         if ($_SESSION['username'] == null || $_SESSION['role'] == 'user') {
             header('Location:/login/index/');
             return;
         }
-        $theuser = $this->model('User')->find($user_id);
-        $theuser->delete();
-        header('location:/home/st_list');
+        $product = $this->model('Product')->find($pid);
+        var_dump($product);
+        $product->delete();
+        header('location:/home/admin');
     }
     public function delete_mess($mess_id, $to_id)
     {
