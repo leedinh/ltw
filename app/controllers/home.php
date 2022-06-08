@@ -54,6 +54,32 @@ class Home  extends Controller
         phpinfo();   
     }
 
+    public function cartshow()
+    {
+        $products = $this->model('Product');
+        if (isset($_SESSION['cart'])){
+            foreach ($_SESSION['cart'] as $key => $value){
+                $item = $products->find($key);
+                echo '
+                <div class="position-relative border">
+                    <a href="/home/item/'.$item->pid.'" class="dropdown-item text-wrap d-flex ">
+                    <img class="w-25 flex-shrink-0 me-3" src="/assets/products/Image3.jpg">
+                    <div>
+                        <div class="name d-flex">
+                            '.$item->fullname.'
+                            </div>
+                        <div class="price d-flex">
+                            Price: '.$item->price.'
+                            </div>
+                        <div class="quantity d-flex">
+                            Quantity: '.$value.'
+                            </div>
+                    </a>
+                </div>'; 
+            }
+        }
+    }
+
     public function cartclick($pid)
     {
         $product = $this->model('Product');
