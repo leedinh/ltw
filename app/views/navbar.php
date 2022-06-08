@@ -6,7 +6,6 @@
     }
 
     .container-fluid {
-        margin-top: 1rem;
         padding: 1rem 2rem;
         margin-left: 2rem;
         margin-right: 2rem;

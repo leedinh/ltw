@@ -6,7 +6,11 @@
   include($path.'navbar.php');
 ?>
 <style>
-  img{
+  .col-2{
+    padding-top: 170px;
+    padding-right: 120px;
+  }
+img{
         max-width: 100%;
         max-height: 100%;
         display: block; /* remove extra space below image */
@@ -22,7 +26,7 @@
     justify-content: center;
   }
   .price {
-    color:#33a6cc;
+    color:#808080;
   }
   .control {
     display: flex;
@@ -57,6 +61,14 @@
       transform: translateY(0);
     }
   }
+
+  #cate{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 30px;
+    font-weight: 300px;
+  }
   .title {
     height: 30%;
     padding-top: 1.5em;
@@ -80,8 +92,10 @@
     <!-- <img alt="LENOVO LEGION 5: Best Choice tầm giá 27 triệu!" src="https://media-api-beta.thinkpro.vn/media/core/banners/2022/5/12/Bản sao legion 5 866-374.jpg" class="blur-up h-full w-full object-cover t-img"> -->
     <div class="row">
         <div class="col-2">
+          <div id="cate" class="row">Category</div>
+          <div class="row">
           <div class="brands mb-3">
-            <div class="product-carousel position-fixed top-50 start-25 translate-middle-y">
+            <div class="product-carousel ">
                 <div class="brand-inner d-flex flex-column" id="brand-inner">
                     <a href="/home/products/Asus" type="button" class="btn box-btn border border-outline-dark p-3 m-3 d-flex align-items-center">
                         <img class="" src="/assets/logo/Asus.png" alt="">
@@ -135,6 +149,7 @@
               </div>
             </div>
         </div>
+        </div>
         <div class="col-10 px-3 bg-opacity">
             <form class="show-product px-4 d-flex flex-column w-50">
               <div id="search-bar" class="search-bar d-flex flex-row">
@@ -165,7 +180,7 @@
                                   '.$item->fullname.'
                               </a>
                             </h5>
-                            <div class="price fw-bold" >
+                            <div class="price fw-bold" > &euro;
                                '.$item->price.'
                             </div> 
                             <div class=" table-btn mt-4 d-flex justify-content-center" >
@@ -200,7 +215,7 @@
                         <path d="m3.86 8.753 5.482 4.796c.646.566 1.658.106 1.658-.753V3.204a1 1 0 0 0-1.659-.753l-5.48 4.796a1 1 0 0 0 0 1.506z"/>
                       </svg>
                     </button>
-                  <input type="text" style="width:2em;" id="page" value="1">
+                  <input type="text" style="width:2em; text-align: center;" id="page" value="1">
                     <button class="btn next">
                       <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-caret-right-fill" viewBox="0 0 16 16">
                         <path d="m12.14 8.753-5.482 4.796c-.646.566-1.658.106-1.658-.753V3.204a1 1 0 0 1 1.659-.753l5.48 4.796a1 1 0 0 1 0 1.506z"/>
@@ -208,7 +223,7 @@
                     </button>
                 </ul>
                 <div class="container d-flex justify-content-center">
-                  <p>Total: </p> 
+                  <p>Total:&nbsp; </p> 
                   <p id="num-of-page">
                     </p>
                 </div>
@@ -233,6 +248,7 @@
     <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
   </div>
   <div class="offcanvas-body">
+    <?php if (isset($_SESSION['cart'])) var_dump($_SESSION['cart']); ?>
   </div>
 </div>
 </div>
