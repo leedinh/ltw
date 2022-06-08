@@ -278,7 +278,7 @@ a:hover {
   </div>
 </div>
 <hr>
-<div class="position-fixed bottom-0 end-0 m-3">
+<div class="position-fixed bottom-0 end-0 m-3" style="z-index: 1;">
   <button id="cart-show" type="button" class="btn btn-outline-dark rounded-pill p-3" data-bs-toggle="offcanvas" data-bs-target="#cart" aria-controls="cart">
     <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-cart" viewBox="0 0 16 16">
       <path d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5zM3.102 4l1.313 7h8.17l1.313-7H3.102zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2zm7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2z" />
@@ -309,9 +309,9 @@ a:hover {
         <div class="p-2">Price</div>
       </div>
       <div class="cart-btn d-flex justify-content-evenly p-3">
-        <button type="button" class="btn btn-outline-dark p-3 clear-btn" style="width: 35%">
+        <a href="/home/clearCart" type="button" class="btn btn-outline-dark p-3 clear-btn" style="width: 35%">
             Clear
-        </button>
+      </a>
         <button type="button" class="btn btn-dark p-3 checkout-btn" style="width: 35%; background-color: black;">
           Checkout
         </button>

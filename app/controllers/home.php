@@ -93,6 +93,12 @@ class Home  extends Controller
 
     }
 
+    public function clearCart(){
+        unset($_SESSION['cart']);
+        header("Location: " . $_SERVER["HTTP_REFERER"]);
+
+    }
+
     public function cartclick($pid)
     {
         $product = $this->model('Product');
@@ -120,9 +126,7 @@ class Home  extends Controller
 
     }
 
-    public function cart(){
-            $this->view('home/cart/detail');
-    }
+
 
     public function item($pid)
     {   
