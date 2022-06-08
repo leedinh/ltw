@@ -5,38 +5,26 @@
         margin-right: 0rem;
     }
 
-    a {
-  text-decoration: none !important;
-  color: Black;
-  }
-a:hover {
-  color: gray;
-  border-bottom: 0.5px solid #333;
-  cursor: pointer;
-}
-    .container-fluid {
-        padding: 1rem 2rem;
-        margin-left: 2rem;
-        margin-right: 2rem;
-        border-radius: 2rem;
-        background: rgba(255, 255, 255, 0.3);
-    }
-
     .nav-item {
         padding: 0 0.5rem;
-        font-weight: 600;
-        font-size: 1.5rem;
+        font-weight: 300;
+        font-size: 1.25vw;
         background: rgba(255, 255, 255, 0);
     }
-
+    
     .nav-link {
         background: rgba(255, 255, 255, 0);
     }
 
+    a {
+        text-decoration: none;
+        color: black;
+        font-size: 1.25vw;
+    }
+
     .navbar-brand {
         margin-left: 2rem;
-        font-weight: 1000;
-        font-size: 1.5rem;
+        font-size: 1.5vw;
         background: rgba(255, 255, 255, 0);
     }
 
@@ -68,47 +56,6 @@ a:hover {
         margin-right: 0.4rem;
     }
 
-    .search-container {
-        margin: 0.5rem 1rem 0.5rem 0;
-        border-radius: 1.5rem;
-        background: rgba(255, 255, 255, 0.8);
-        padding: 0.3rem;
-    }
-
-    .search-bar {
-        width: 30rem;
-        max-width: 700px;
-        background: rgba(255, 255, 255, 0);
-        display: flex;
-        align-items: center;
-        border-radius: 200px;
-    }
-
-    .search-bar input {
-        background: transparent;
-        flex: 1;
-        border: 0;
-        outline: none;
-        font-size: 20px;
-        color: #111;
-    }
-
-    ::placeholder {
-        color: #111;
-    }
-
-    .search-bar button span {
-        width: 25px;
-        margin: 0;
-    }
-
-    .search-bar button {
-        border: 0;
-        width: 2rem;
-        border-radius: 50%;
-        background: rgba(255, 255, 255, 0);
-        cursor: pointer;
-    }
 </style>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
 <nav class="position-relative navbar navbar-expand-lg w-100 navbar-light bg-transparent">
@@ -129,20 +76,22 @@ a:hover {
             </ul>
         </div>
 
-        <a href='/home/cartView/' class="btn" type="button" >
-            <span class="material-symbols-outlined">shopping_cart</span>
+        <a href="/home/cart" class="btn btn-outline-dark mx-3" type="button" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="currentColor" class="bi bi-cart-fill" viewBox="0 0 16 16">
+                <path d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2zm7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2z"/>
+            </svg>
         </a>
         <?php
         if (isset($_SESSION['user_id'])) {
-            echo '<a href="/login/logout"> Logout</a>';
+            echo '<a href="/login/logout" class="btn btn-outline-dark"> Logout</a>';
         } else {
-            echo '<a href="/login/index"> Login</a>';
+            echo '<a href="/login/index" class="btn btn-outline-dark"> Login</a>';
         }
         ?>
         <?php
         if (isset($_SESSION['role']) && $_SESSION['role'] == 'admin') {
             echo '
-                <a href="/home/admin" class="btn" type="button"
+                <a href="/home/admin" class="btn btn-outline-dark" type="button"
                     aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                     ADMIN
                 </a>';

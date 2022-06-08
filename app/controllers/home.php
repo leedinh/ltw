@@ -120,6 +120,10 @@ class Home  extends Controller
 
     }
 
+    public function cart(){
+            $this->view('home/cart/detail');
+    }
+
     public function item($pid)
     {   
         $product = $this->model('Product');
