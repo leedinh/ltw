@@ -35,13 +35,11 @@ class Home  extends Controller
         // var_dump( $productslst);
         foreach ($productslst as $item){
             echo '
-            <div class="position-relative border">
-                <a href="/home/item/'.$item->pid.'" class="dropdown-item text-wrap d-flex ">
-                <img class="w-25 flex-shrink-0 me-3" src="/assets/products/Image3.jpg">
-                <div>
-                    <div class="name d-flex align-items-center">
-                        '.$item->fullname.'
-                        </div>
+            <div class="position-relative p-3 search-item">
+                <a href="/home/item/'.$item->pid.'" class="d-flex content-search-item" style="text-decorate: none;">
+                    <img class="w-25 flex-shrink-0 me-3" src="/assets/products/Image3.jpg">
+                        <div class="name d-flex align-items-center">
+                            '.$item->fullname.'
                         </div>
                 </a>
             </div>'; 
@@ -64,26 +62,46 @@ class Home  extends Controller
                 $item = $products->find($key);
                 $total += (float)$item->price * $value;
                 $output .= '
-                <div class="position-relative border tcan">
-                    <div class="dropdown-item text-wrap d-flex ">
-                    <img class="w-25 flex-shrink-0 me-3" src="/assets/products/Image3.jpg">
-                        
-                    <a href ="/home/item/'.$item->pid.'"'.'class="d-flex align-self-center">
-                            '.$item->fullname.'
+                <div class="row p-3">
+                    <div class="col-4">
+                        <a href="/home/item/'.$item->pid.'" class="w-50 ">
+                        <img src="/assets/products/Image3.jpg" class="flex-shrink-0 me-3 img-cart">
                         </a>
-                        <div class="d-flex align-self-center">
-                            &euro;'.$item->price.'
-                            x'.$value.'
-                        </div>
-                        <a href="/home/deleteCart/'.$item->pid.'"'.'class=" d-flex align-self-center">
-                            <i class="fa fa-trash-o" ></i>
-                        </a>
-                        </div>
-                </div>'; 
+                    </div>
+                    <div class="col-8" >
+                         <a href="/home/item/'.$item->pid.'" style="text-decoration: none;">
+                            <p class="mt-0" style="color: black; font-weight: 700;">'.$item->fullname.'</p>
+                         </a>
+                            <p class="price" style="color: #8585e0;">
+                                Price: '.$item->price.'
+                            </p>
+                            <div class="d-flex mb-3" style="color: black;">
+                                <p class= "me-auto">
+                                    Quantity: '.$value.'
+                                </p>
+                                <a href="/home/deleteCart/'.$item->pid.'"'.'class="btn btn-outline-dark">
+                                    <i class="fa fa-trash-o" ></i>
+                                </a>
+                                </div>
+                    </div>
+                </div>
+                ';
             }
-            $output.='
-            <p> Total Price: &euro;'.$total.'</p>';
             echo $output;
+        }
+    }
+    public function carttotal()
+    {
+        $products = $this->model('Product');
+        if (isset($_SESSION['cart'])){
+            $output = '';
+            $total = 0;
+            foreach ($_SESSION['cart'] as $key => $value){
+                $item = $products->find($key);
+                $total += (float)$item->price * $value;
+            }
+            echo '&euro;';
+            echo $total;
         }
     }
 

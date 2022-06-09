@@ -129,9 +129,25 @@ a:hover {
   #item {
     min-height: 30rem;
   }
-
   .product-content {
     height: 90%;
+  }
+
+  #result {
+    transition: transform 5s ease-in-out;
+    border-right: 1px solid  black;
+    border-left: 1px solid  black;
+    border-bottom: 1px solid  black;
+  }
+  .search-item {
+    border-bottom: 1px solid black;
+  }
+
+  .search-item:hover {
+    background-color: linear-gradient(-45deg, #33cca6, #8585e0);
+  }
+  .search-item .content-search-item{
+    border-bottom: 0px;
   }
 </style>
 <div class="test container">
@@ -206,7 +222,7 @@ a:hover {
             </svg>
           </button>
         </div>
-        <div class="result position-relative" name="result" id="result"></div>
+        <div class="result position-relative d-none rounded-bottom" name="result" id="result"></div>
       </form>
       <div class="row" id="wrap">
         <?php
@@ -305,7 +321,8 @@ a:hover {
     </div>
     <div class="offcanvas-footer d-flex flex-column" style="z-index: 1">
       <div class="total-price d-flex p-3" style="border-top: solid 1px black ; ">
-        <div class="me-auto p-2">Total Price: </div>
+        <div class="me-auto p-2">SUB-TOTAL</div>
+        <div class="p-2 sub-total">Price</div>
       </div>
       <div class="cart-btn d-flex justify-content-evenly p-3">
         <a href="/home/clearCart" type="button" class="btn btn-outline-dark p-3 clear-btn" style="width: 35%">
@@ -372,6 +389,13 @@ a:hover {
       type: 'GET',
       success: function(data) {
         $('.offcanvas-body').html(data);
+      }
+    });
+    $.ajax({
+      url: '/home/carttotal',
+      type: 'GET',
+      success: function(data) {
+        $('.sub-total').html(data);
       }
     });
   });
@@ -481,10 +505,12 @@ a:hover {
         type: 'post',
         //action on successful post request
         success: function(response) {
+          $('.result').removeClass('d-none');
           $('.result').html(response);
         },
       })
     } else {
+      $('.result').addClass('d-none');
       $('.result').html("");
     }
   }

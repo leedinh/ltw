@@ -171,7 +171,6 @@
                   </svg>
                 </button>
               </a>
-                <button class="btn">Edit</button>
               </td>
             </tr>';
             }
@@ -192,7 +191,10 @@
                       </svg>
                     </button>
                 </ul>
-                <div id="num-of-page">
+                <div class="container d-flex justify-content-center">
+                  <p>Total:&nbsp; </p>
+                  <p id="num-of-page">
+                  </p>
                 </div>
               </div>
       </div>
