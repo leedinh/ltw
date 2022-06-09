@@ -379,6 +379,7 @@ a:hover {
       type: 'GET',
       success: function(data) {
         $('#numi').html(data);
+        $('#numi1').html(data);
       }
     });
   });

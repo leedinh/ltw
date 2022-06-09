@@ -2,7 +2,6 @@
 	include('../app/views/header.php');
 ?>
 
-
 <link rel="stylesheet" href="/css/mystyle.css">
 <?php if (isset($data['error']))
         echo '  <div class="alert alert-danger alert-dismissible">' . $data['error'] . '</div>'; 
@@ -55,7 +54,7 @@
 <button id ="back" onclick="history.back()"> <i class="fa fa-arrow-left"></i> </button>
 <style> 
 #back{
-    background-color: gray;
+    background-color: #FF4B2B;
     border: none;
     font-size: 15px;
      margin-top: 10px;
