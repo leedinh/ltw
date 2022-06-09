@@ -156,7 +156,7 @@
         </div>
         <div class="buttons">
             <a> Update </a>
-            <a> Place Order </a>
+            <a href="/home/placeorder"> Place Order </a>
         </div>
     </form>
 </div>

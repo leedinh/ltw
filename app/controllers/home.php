@@ -126,7 +126,11 @@ class Home  extends Controller
 
     }
 
+    public function placeorder()
+    {
 
+        $this->view('/home/placeorder');
+    }
 
     public function item($pid)
     {   

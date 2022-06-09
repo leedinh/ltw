@@ -301,20 +301,19 @@ a:hover {
       <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
     </div>
     <div class="offcanvas-body">
-      
+   
     </div>
     <div class="offcanvas-footer d-flex flex-column" style="z-index: 1">
       <div class="total-price d-flex p-3" style="border-top: solid 1px black ; ">
-        <div class="me-auto p-2">SUB-TOTAL</div>
-        <div class="p-2">Price</div>
+        <div class="me-auto p-2">Total Price: </div>
       </div>
       <div class="cart-btn d-flex justify-content-evenly p-3">
         <a href="/home/clearCart" type="button" class="btn btn-outline-dark p-3 clear-btn" style="width: 35%">
             Clear
       </a>
-        <button type="button" class="btn btn-dark p-3 checkout-btn" style="width: 35%; background-color: black;">
-          Checkout
-        </button>
+        <a href="/home/placeorder" type="button" class="btn btn-dark p-3 checkout-btn" style="width: 35%; background-color: black;">
+          Placed Order
+      </a>
       </div>
     </div>
   </div>
