@@ -3,6 +3,13 @@
 	include($path.'header.php');
   include($path.'navbar.php');
 ?>
+<style>
+  .table {
+    padding-left: 0.1vw;
+    padding-right: 0.1vw;
+    border: solid 2px black;
+  }
+</style>
 <div class="modal fade" id="exampleModal" tabindex="-1">
   <div class="modal-dialog">
     <div class="modal-content">
@@ -120,14 +127,16 @@
 </div>
 
 
-      <div class="table-product container">
-        <div class="search-bar">
-          <input type="text" class="p-3 form-control w-100" placeholder="Search...">
-          <button type="button" class="btn" data-bs-toggle="modal" data-bs-target="#exampleModal">
-            Add product
-          </button>
+      <div class="table-product container p-3">
+        <div class="search-bar d-flex flex-row p-3 pb-3">
+          <input type="text" class="form-control w-75" placeholder="Search..." style="padding: 10px; border: 1px solid grey;">
+          <div class="btn-container w-25 d-flex justify-content-center align-item-center">
+            <button type="button" class="btn btn-outline-dark " data-bs-toggle="modal" data-bs-target="#exampleModal">
+              Add product
+            </button>
+          </div>
         </div>
-        <table class="table border p-3 mx-4">
+        <table class="table mt-">
           <thead>
             <tr>
               <th scope="col">ID</th>
