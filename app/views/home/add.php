@@ -171,7 +171,6 @@
                   </svg>
                 </button>
               </a>
-                <button class="btn">Edit</button>
               </td>
             </tr>';
             }
